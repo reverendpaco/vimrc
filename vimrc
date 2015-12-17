@@ -1,3 +1,5 @@
+set expandtab
+
 let mapleader = "-"
 
 nnoremap <leader>n :NERDTree<enter>
