@@ -10,6 +10,8 @@ nnoremap <leader>cp vip<c-v>I--   <esc>
 nnoremap <leader>tx :% ! tidy -i -xml -quiet
 nnoremap <leader>tj :% ! python -mjson.tool
 nnoremap <leader>cc :set cursorcolumn!<enter>
+nnoremap ; :
+cnoremap W w
 
 "let g:ctrlp_show_hidden = 1
 
