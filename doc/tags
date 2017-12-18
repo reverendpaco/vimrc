@@ -103,11 +103,6 @@ ClearAllCtrlPCaches	ctrlp.txt	/*ClearAllCtrlPCaches*
 ClearCtrlPCache	ctrlp.txt	/*ClearCtrlPCache*
 ControlP	ctrlp.txt	/*ControlP*
 CtrlP	ctrlp.txt	/*CtrlP*
-EasyMotion_do_mapping	easymotion.txt	/*EasyMotion_do_mapping*
-EasyMotion_do_shade	easymotion.txt	/*EasyMotion_do_shade*
-EasyMotion_grouping	easymotion.txt	/*EasyMotion_grouping*
-EasyMotion_keys	easymotion.txt	/*EasyMotion_keys*
-EasyMotion_leader_key	easymotion.txt	/*EasyMotion_leader_key*
 NERDTree	NERD_tree.txt	/*NERDTree*
 NERDTree-?	NERD_tree.txt	/*NERDTree-?*
 NERDTree-A	NERD_tree.txt	/*NERDTree-A*
