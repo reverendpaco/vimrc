@@ -63,3 +63,11 @@ let g:airline_theme='molokai'
 " associate *.foo with php filetype
 au BufRead,BufNewFile Vagrantfile setfiletype ruby
 
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+vnoremap // y/<C-R>"<CR>
