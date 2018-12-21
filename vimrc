@@ -43,6 +43,7 @@ cnoremap <c-j> <t_kd>
 cnoremap <c-k> <t_ku>
 cnoremap <c-a> <home>
 cnoremap <c-e> <end>
+vnoremap // y/\V<C-r>=escape(@",'/\')<CR><CR>
 
 augroup filetypedetect 
   au BufNewFile,BufRead *.pig set filetype=pig syntax=pig 
