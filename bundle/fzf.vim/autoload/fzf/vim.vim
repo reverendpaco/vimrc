@@ -533,19 +533,11 @@ function! s:get_git_root()
   return v:shell_error ? '' : root
 endfunction
 
-function! fzf#vim#gitfiles(args, ...)
+function! fzf#vim#gitfilesq(args, ...)
   let root = s:get_git_root()
   if empty(root)
     return s:warn('Not in git repo')
   endif
-  if a:args != '?'
-    return s:fzf('gfiles', {
-    \ 'source':  'git ls-files '.a:args.(s:is_win ? '' : ' | uniq'),
-    \ 'dir':     root,
-    \ 'options': '-m --prompt "GitFiles> "'
-    \}, a:000)
-  endif
-
   " Here be dragons!
   " We're trying to access the common sink function that fzf#wrap injects to
   " the options dictionary.
@@ -562,6 +554,20 @@ function! fzf#vim#gitfiles(args, ...)
   endfunction
   let wrapped['sink*'] = remove(wrapped, 'newsink')
   return s:fzf('gfiles-diff', wrapped, a:000)
+endfunction
+
+function! fzf#vim#gitfiles(args, ...)
+  let root = s:get_git_root()
+  if empty(root)
+    return s:warn('Not in git repo')
+  endif
+  if a:args != '?'
+    return s:fzf('gfiles', {
+    \ 'source':  'git ls-files '.a:args.(s:is_win ? '' : ' | uniq'),
+    \ 'dir':     root,
+    \ 'options': '-m --prompt "GitFiles> "'
+    \}, a:000)
+  endif
 endfunction
 
 " ------------------------------------------------------------------
@@ -633,7 +639,7 @@ function! fzf#vim#buffers(...)
   return s:fzf('buffers', {
   \ 'source':  map(s:buflisted_sorted(), 's:format_buffer(v:val)'),
   \ 'sink*':   s:function('s:bufopen'),
-  \ 'options': ['+m', '-x', '--tiebreak=index', '--header-lines=1', '--ansi', '-d', '\t', '-n', '2,1..2', '--prompt', 'Buf> ', '--query', query]
+  \ 'options': ['--reverse','+m', '-x', '--tiebreak=index', '--header-lines=1', '--ansi', '-d', '\t', '-n', '2,1..2', '--prompt', 'Buf> ', '--query', query]
   \}, args)
 endfunction
 
@@ -1050,7 +1056,7 @@ function! fzf#vim#windows(...)
   return s:fzf('windows', {
   \ 'source':  extend(['Tab Win    Name'], lines),
   \ 'sink':    s:function('s:windows_sink'),
-  \ 'options': '+m --ansi --tiebreak=begin --header-lines=1'}, a:000)
+  \ 'options': '--reverse +m --ansi --tiebreak=begin --header-lines=1'}, a:000)
 endfunction
 
 " ------------------------------------------------------------------
