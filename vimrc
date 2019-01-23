@@ -78,12 +78,12 @@ nmap ga <Plug>(EasyAlign)
 set rtp+=~/.fzf
 nnoremap <silent> <leader>; :Lines<CR>
 nnoremap <silent> <leader>f :Files <CR>
+nnoremap <silent> <leader>t :Files ~<CR>
+nnoremap <silent> <leader>v :e ~/.vim/vimrc<CR>
 nnoremap <silent> <leader>w :Buffers<CR>
 set switchbuf=usetab,newtab
-
-
-vnoremap // y/<C-R>"<CR>
-
 set paste
 
-
+vnoremap // y/<C-R>"<CR>
+autocmd VimEnter * tabnew ~/.SCRATCH | r  ! date 
+autocmd VimEnter * tabnext
