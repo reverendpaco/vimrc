@@ -43,7 +43,10 @@ cnoremap <c-j> <t_kd>
 cnoremap <c-k> <t_ku>
 cnoremap <c-a> <home>
 cnoremap <c-e> <end>
-vnoremap // y/\V<C-r>=escape(@",'/\')<CR><CR>
+
+map <c-b> :bn<cr>
+nnoremap <c-a> <c-^><cr>
+
 
 augroup filetypedetect 
   au BufNewFile,BufRead *.pig set filetype=pig syntax=pig 
@@ -57,6 +60,7 @@ set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
 execute pathogen#infect()
 
+vnoremap // y/\V<C-r>=escape(@",'/\')<CR><CR>
 let g:airline_powerline_fonts = 1
 
 set laststatus=2
@@ -71,4 +75,15 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
+set rtp+=~/.fzf
+nnoremap <silent> <leader>; :Lines<CR>
+nnoremap <silent> <leader>f :Files <CR>
+nnoremap <silent> <leader>w :Buffers<CR>
+set switchbuf=usetab,newtab
+
+
 vnoremap // y/<C-R>"<CR>
+
+set paste
+
+
