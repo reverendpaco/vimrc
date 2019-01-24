@@ -57,13 +57,16 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.svn     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
-let g:airline#extensions#tabline#fnamemod = ':t'  
-let g:airline#extensions#tabline#enabled = 1 
 
 execute pathogen#infect()
 
 vnoremap // y/\V<C-r>=escape(@",'/\')<CR><CR>
 let g:airline_powerline_fonts = 1
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
 
 set laststatus=2
 let g:airline_theme='molokai'
@@ -82,6 +85,8 @@ nnoremap <silent> <leader>; :Lines<CR>
 nnoremap <silent> <leader>e :Files <CR>
 nnoremap <silent> <leader>t :Files ~<CR>
 nnoremap <silent> <leader>g :GFiles <CR>
+nnoremap <silent> <leader>c :Colors <CR>
+nnoremap <silent> <leader>h :History <CR>
 nnoremap <silent> <leader>s :GFilesQ<CR>
 nnoremap <silent> <leader>v :e ~/.vim/vimrc<CR>
 nnoremap <silent> <leader>o :Buffers <CR>
@@ -92,5 +97,5 @@ let g:fzf_layout = { 'up': '~40%' }
 let g:fzf_layout = { 'window': 'enew' }
 
 vnoremap // y/<C-R>"<CR>
-autocmd VimEnter * tabnew ~/.SCRATCH | r  ! date 
-autocmd VimEnter * tabnext
+autocmd VimEnter * e ~/.SCRATCH | r  ! date 
+autocmd VimEnter * bn
