@@ -57,6 +57,8 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.svn     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
+let g:airline#extensions#tabline#fnamemod = ':t'  
+let g:airline#extensions#tabline#enabled = 1 
 
 execute pathogen#infect()
 
