@@ -90,12 +90,20 @@ nnoremap <silent> <leader>h :History <CR>
 nnoremap <silent> <leader>s :GFilesQ<CR>
 nnoremap <silent> <leader>v :e ~/.vim/vimrc<CR>
 nnoremap <silent> <leader>o :Buffers <CR>
+nnoremap <silent> <leader>r :Rg <CR>
+nnoremap <silent> <leader>w :Rg <C-R><C-W><CR>
+nnoremap <silent> <leader>W :Rg <C-R><C-A><CR>
 nnoremap <silent> <c-t> :tabnew<CR>
 
 set paste
 let g:fzf_layout = { 'up': '~40%' }
 let g:fzf_layout = { 'window': 'enew' }
 
-vnoremap // y/<C-R>"<CR>
-autocmd VimEnter * e ~/.SCRATCH | r  ! date 
-autocmd VimEnter * bn
+vnoremap // y:Rg <C-R>"<CR>
+" Similarly, we can apply it to fzf#vim#grep. To use ripgrep instead of ag:
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
