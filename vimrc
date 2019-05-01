@@ -44,7 +44,7 @@ cnoremap <c-a> <home>
 cnoremap <c-e> <end>
 
 map <c-b> :bn<cr>
-nnoremap <c-a> <c-^><cr>
+nnoremap <c-a> <c-^>
 
 
 augroup filetypedetect 
@@ -94,7 +94,7 @@ nnoremap <silent> <leader>w :Rg <C-R><C-W><CR>
 nnoremap <silent> <leader>W :Rg <C-R><C-A><CR>
 nnoremap <silent> <c-t> :tabnew<CR>
 
-set paste
+" set paste
 let g:fzf_layout = { 'up': '~40%' }
 let g:fzf_layout = { 'window': 'enew' }
 
@@ -108,3 +108,14 @@ command! -bang -nargs=* Rg
   \   <bang>0)
 
 set autoindent
+inoremap JK <Esc>
+inoremap JJ <C-]>
+iabbrev _std standardize
+iabbrev _gc geocode
+iabbrev _gj  geojoin
+iabbrev _ccz canonicalize
+iabbrev _imp import
+iabbrev _dcde .cursor().execute()
+iabbrev _hh household
+iabbrev _dd dedupe
+iabbrev _cf config
