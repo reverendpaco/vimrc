@@ -108,8 +108,8 @@ command! -bang -nargs=* Rg
   \   <bang>0)
 
 set autoindent
-inoremap JK <Esc>
-inoremap JJ <C-]>
+inoremap jk <Esc>
+inoremap jj <C-]>
 iabbrev _std standardize
 iabbrev _gc geocode
 iabbrev _gj  geojoin
