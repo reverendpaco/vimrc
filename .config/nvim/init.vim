@@ -43,6 +43,6 @@ endfunction
 "
 "
 
-color morning
-highlight Pmenu ctermbg=25 guibg=brown gui=bold
+color alduin
+"highlight Pmenu ctermbg=25 guibg=brown gui=bold
 nnoremap <silent> <leader>t :FloatermNew <CR>
