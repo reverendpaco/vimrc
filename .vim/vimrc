@@ -119,3 +119,8 @@ iabbrev _dcde .cursor().execute()
 iabbrev _hh household
 iabbrev _dd dedupe
 iabbrev _cf config
+
+
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
