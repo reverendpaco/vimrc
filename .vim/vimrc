@@ -11,6 +11,7 @@ let &runtimepath = printf('%s,%s,%s/after', s:portable, &runtimepath, s:portable
 set expandtab
 set display=lastline
 set tabstop=2 softtabstop=2
+set shiftwidth=2
 
 let mapleader = "-"
 
@@ -124,3 +125,5 @@ iabbrev _cf config
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
+let g:ftplugin_sql_omni_key = '<Leader>sql'
+let g:ftplugin_sql_omni_key = '<leader><leader>bob'   
