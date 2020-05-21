@@ -13,7 +13,7 @@ set display=lastline
 set tabstop=2 softtabstop=2
 set shiftwidth=2
 
-let mapleader = "-"
+let mapleader = "s"
 
 nnoremap <leader>n :NERDTree<enter>
 nnoremap <leader>p vip
