@@ -19,12 +19,14 @@ set shiftwidth=2
 let mapleader = "s"
 nmap - <leader>
 
+vnoremap <leader>f y/\V<C-R>=escape(@",'/\')<CR><CR>
 nnoremap <leader>n :NERDTree<enter>
 nnoremap <leader>p vip
 nnoremap <leader>cp vip<c-v>I--   <esc>
 nnoremap <leader>tx :% ! tidy -i -xml -quiet
 nnoremap <leader>tj :% ! python -mjson.tool
 nnoremap <leader>cc :set cursorcolumn!<enter>
+nmap <Leader>m <Plug>ToggleMarkbar
 nnoremap ; :
 
 "let g:ctrlp_show_hidden = 1
