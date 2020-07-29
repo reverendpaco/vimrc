@@ -27,6 +27,7 @@ nnoremap <leader>tx :% ! tidy -i -xml -quiet
 nnoremap <leader>tj :% ! python -mjson.tool
 nnoremap <leader>cc :set cursorcolumn!<enter>
 nmap <Leader>m <Plug>ToggleMarkbar
+let g:markbar_peekaboo_apostrophe_mapping = '<leader>x'
 nnoremap ; :
 
 "let g:ctrlp_show_hidden = 1
