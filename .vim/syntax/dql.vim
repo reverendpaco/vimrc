@@ -10,7 +10,7 @@ endif
 syn case ignore
 
 " Keywords
-syntax keyword  dqlKeywords scalar as  G O assert insert is not like
+syntax keyword  dqlKeywords scalar as  D G O L H assert insert is not like
 syntax keyword  dqlBooleans true false null  
 syntax keyword  dqlBooleans _ 
 syntax match  dqlFunction "\v\zs\w+:(\[?[A-Za-z_,]+\]?)?\ze\(" 
