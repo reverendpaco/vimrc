@@ -21,11 +21,10 @@ nmap - <leader>
 
 vnoremap <leader>f y/\V<C-R>=escape(@",'/\')<CR><CR>
 nnoremap <leader>n :NERDTree<enter>
+nnoremap <leader>nw :w<enter>
 nnoremap <leader>p vip
-nnoremap <leader>cp vip<c-v>I--   <esc>
 nnoremap <leader>tx :% ! tidy -i -xml -quiet
 nnoremap <leader>tj :% ! python -mjson.tool
-nnoremap <leader>cc :set cursorcolumn!<enter>
 nmap <Leader>m <Plug>ToggleMarkbar
 let g:markbar_peekaboo_apostrophe_mapping = '<leader>x'
 nnoremap ; :
@@ -93,7 +92,10 @@ nnoremap <silent> <leader>e :Files <CR>
 nnoremap <silent> <leader>a :set list! <CR>
 nnoremap <silent> <leader>t :Files ~<CR>
 nnoremap <silent> <leader>g :GFiles <CR>
-nnoremap <silent> <leader>c :Colors <CR>
+nnoremap <silent> <leader>gd :GoDoc <CR>
+nnoremap <silent> <leader>gdb :GoDocBrowser <CR>
+nnoremap <silent> <leader>c :Commands <CR>
+nnoremap <silent> <leader>C :Colors <CR>
 nnoremap <silent> <leader>h :History <CR>
 nnoremap <silent> <leader>s :GFilesQ<CR>
 nnoremap <silent> <leader>v :e ~/.vim/vimrc<CR>
@@ -132,5 +134,6 @@ iabbrev _cf config
 
 
 map /  <Plug>(incsearch-forward)
-let g:ftplugin_sql_omni_key = '<Leader>sql'
+let g:ftplugin_sql_omni_key = '<leader>sql'
 let g:ftplugin_sql_omni_key = '<leader><leader>bob'   
+let g:go_fmt_command = "goimports"
