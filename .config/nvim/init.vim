@@ -45,5 +45,4 @@ endfunction
 
 color apprentice
 "highlight Pmenu ctermbg=25 guibg=brown gui=bold
-nnoremap <silent> <leader>t :FloatermNew <CR>
 nnoremap <silent> <leader>n :e ~/.config/nvim/init.vim<CR>
